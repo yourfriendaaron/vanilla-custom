@@ -1,7 +1,7 @@
 name: Custom Vanilla Desktop # Replace this name with your image name
-id: aaron-vanilla # Replace this ID with your image ID
+id: vanilla-custom # Replace this ID with your image ID
 stages:
-- id: aaron-vanilla
+- id: vanilla-custom
   base: ghcr.io/vanilla-os/desktop:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
   singlelayer: false
   labels:
