@@ -27,12 +27,15 @@ stages:
     type: apt
     source:
       packages:
-      - vim
+      - fastfetch
 
-  - name: example-commands # Sample module demonstrating the Shell module with custom commands
+  - name: install-tailscale # Sample module demonstrating the Shell module with custom commands
     type: shell
     commands:
-    - echo Example output
+    - mkdir -p --mode=0755 /usr/share/keyrings
+    - curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+    - curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | tee /etc/apt/sources.list.d/tailscale.list
+    - apt-get update && apt-get install -y tailscale
 
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
