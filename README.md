@@ -1,4 +1,4 @@
-_Changes: Added Tailscale, fastfetch, and gnome-tweaks
+_Changes: Added Tailscale, fastfetch, and gnome-tweaks_
 
 # Custom Vib Image
 
